@@ -12,7 +12,7 @@
 #include <ciso646>
 #ifdef _LIBCPP_VERSION
 #include <type_traits>
-using std::is_arithmetics;
+using std::is_arithmetic;
 using std::integral_constant;
 using std::is_class;
 #else
