@@ -9,7 +9,18 @@
 #ifndef MINIMATH_TYPE_TRAITS_HPP_
 #define MINIMATH_TYPE_TRAITS_HPP_
 
+#include <ciso646>
+#ifdef _LIBCPP_VERSION
+#include <type_traits>
+using std::is_arithmetics;
+using std::integral_constant;
+using std::is_class;
+#else
 #include <tr1/type_traits>
+using std::tr1::is_arithmetic;
+using std::tr1::integral_constant;
+using std::tr1::is_class;
+#endif
 
 namespace minimath
 {
@@ -18,10 +29,6 @@ struct enable_if {};
 
 template <typename T>
 struct enable_if<true, T> { typedef T type; };
-
-using std::tr1::is_arithmetic;
-using std::tr1::integral_constant;
-using std::tr1::is_class;
 
 } // minimath
 
